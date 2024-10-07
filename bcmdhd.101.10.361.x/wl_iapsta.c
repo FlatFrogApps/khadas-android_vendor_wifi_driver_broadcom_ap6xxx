@@ -4110,7 +4110,7 @@ wl_ext_in4way_sync_ap(dhd_pub_t *dhd, struct wl_if_info *cur_if,
 	struct net_device *dev = cur_if->dev;
 	struct osl_timespec cur_ts, *ap_disc_sta_ts = &cur_if->ap_disc_sta_ts;
 	u8 *ap_disc_sta_bssid = (u8*)&cur_if->ap_disc_sta_bssid;
-	uint32 diff_ms = 0, timeout, max_wait_time = 300;
+	uint32 diff_ms = 0, timeout, max_wait_time = 600;
 	int ret = 0, suppressed = 0;
 	u8* mac_addr = context;
 	bool wait = FALSE;
