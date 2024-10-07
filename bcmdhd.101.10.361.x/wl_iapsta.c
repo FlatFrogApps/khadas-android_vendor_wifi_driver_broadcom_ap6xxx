@@ -4167,8 +4167,8 @@ wl_ext_in4way_sync_ap(dhd_pub_t *dhd, struct wl_if_info *cur_if,
 					timeout = wait_event_interruptible_timeout(cur_if->ap_recon_sta_event,
 						cur_if->ap_recon_sta, msecs_to_jiffies(max_wait_time));
 					mutex_lock(&apsta_params->in4way_sync);
-					IAPSTA_INFO(dev->name, "status=%d, ap_recon_sta=%d, timeout=%d\n",
-						status, cur_if->ap_recon_sta, timeout);
+					IAPSTA_INFO(dev->name, "status=%d, ap_recon_sta=%d, timeout=%d (%d ms)\n",
+						status, cur_if->ap_recon_sta, timeout, jiffies_to_msecs(timeout));
 					if (timeout > 0) {
 						IAPSTA_INFO(dev->name, "skip delete STA %pM\n", mac_addr);
 						ret = -1;
